@@ -56,6 +56,16 @@ span {
 
                   
   }
+  input:invalid+span:after {
+      content: '✖';
+        color: red;
 
+  }
+
+  input:valid+span:after {
+      content: '✓';
+        color: green;
+
+  }
 
 
