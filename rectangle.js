@@ -15,6 +15,23 @@ $(function() {
       $heightValidate = $('#height-validate'),
 
       isPassValidate = false;
+$width.keypress(function(e){
+  if(/[abcdf-zABCDF-Z]/.test(e.key)){
+        e.preventDefault();
+}
+if (e.key==='.'){
+  if(e.target.value===''){
+    e.preventDefault();
+  }
+  if(e.target.value.indexOf('.')!==-1){
+    e.preventDefault();
+  }else{
+    if(e.target.selectionStart===0){
+      e.preventDefault();
+    }
+  }
+}
+})
 $width.focusout(function() {
       var result = validate($width.val());
       isPassValidate = result.isOK;
